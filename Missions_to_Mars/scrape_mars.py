@@ -7,7 +7,7 @@ from splinter import Browser
 
 # Initialize browser
 def init_browser():
-    executable_path = {"executable_path": "/Users/nallu/.wdm/drivers/chromedriver/win32/92.0.4515.107/chromedriver.exe}
+    executable_path = {"executable_path": "/Users/nallu/.wdm/drivers/chromedriver/win32/92.0.4515.107/chromedriver.exe"}
     return Browser('chrome', **executable_path, headless = False)
     
 mars_info = {}
