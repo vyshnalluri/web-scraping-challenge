@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Mission to Mars</title>
+  </head>
+
+  <div class="container-fluid">
+
+  <body>
+    <div class="jumbotron text-center">
+      <h1 class="display-3" ><b>Mission to Mars</b></h1>
+      <hr class="my-4">
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a>
+      </p>
+    </div>
+
+    <div class="container-fluid">
+      <h2><b>Latest Mars News</b></h2>
+      <h4>{{ mars_data_dict.news_title_text }}</h4>
+      <p>{{ mars_data_dict.news_p_text }}</p>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+      <div class="col-md-8">
+        <h2><b>Featured Mars Image</b></h2>
+        <img src="{{mars_data_dict.featured_image_url}}" alt="Featured Mars Image" style="max-width:600px; max-height: 800px;">
+      </div>
+      <div class="col-md-4">
+        <h4>Mars Facts</h4>
+        <div>{{ mars_data_dict.mars_facts_df |safe }}</div>
+      </div>
+      </div>
+    </div>
+    <br>
+    <div class="container-fluid text-center">
+      <h2><b>Mars Hemispheres</b></h2>
+      <div class="row">
+        {% for img in mars_data_dict.hemi_img_urls %}
+        <div class="col-md-6">
+          <div class="card" style="size: 25rem;">
+            <img src="{{ img.img_url }}" class="card-img-top">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      </div>
+
+    </div>
+
+  </body>
+  </div>
+</html>
