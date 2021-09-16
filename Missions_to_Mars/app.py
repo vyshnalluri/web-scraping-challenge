@@ -17,7 +17,7 @@ def index():
     return render_template("index.html", mars_data_dict=mars_data_dict)
 
 @app.route("/scrape")
-def scrape():
+def scrape_all():
     mars_data_dict =  mongo.db.mars_data_dict
 
     mars_dict = scrape_mars.scrape_all()
