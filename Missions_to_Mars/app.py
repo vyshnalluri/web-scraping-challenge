@@ -22,9 +22,9 @@ def scrape():
 
     mars_dict = scrape_mars.scrape_all()
 
-    mongo.db.mars_data_dict.update({}, mars_dict, upsert=True)
+    mars_data_dict.update({}, mars_dict, upsert=True)
 
-    return redirect("/", code=302)
+    return redirect('/', code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)
